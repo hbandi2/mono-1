@@ -1,7 +1,17 @@
 {
   "name": "root",
   "private": true,
+  "workspaces": {
+    "packages": ["packages/*"],
+    "nohoist": ["**/react-native", "**/react-native/**"]
+  },
   "devDependencies": {
     "lerna": "^4.0.0"
+  },
+  "scripts": {
+    "android": "lerna --scope=rnapp1 run android --stream --",
+    "ios": "lerna --scope=rnapp1 run ios --stream --",
+    "web": "lerna --scope=r-app run start --stream --",
+    "test": "lerna test --stream --"
   }
 }
